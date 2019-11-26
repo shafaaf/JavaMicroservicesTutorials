@@ -1,4 +1,4 @@
-# JavaRestApiExample
+# JavaRestApiExample using Java Spark framework
 
 ### Making REST endpoints
 Tutorial: https://www.baeldung.com/spark-framework-rest-api
