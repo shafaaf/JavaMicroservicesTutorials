@@ -2,13 +2,15 @@ package com.in28minutes.junit.helper;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class StringHelperTest {
 
     @Test
     public void truncateAInFirst2Positions() {
-        System.out.println("truncateAInFirst2Positions");
+        StringHelper stringHelper = new StringHelper();
+        assertEquals("CD", stringHelper.truncateAInFirst2Positions("AACD"));
+        assertEquals("CD", stringHelper.truncateAInFirst2Positions("ACD"));
     }
 
     @Test
