@@ -2,13 +2,14 @@ package com.in28minutes.junit.helper;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.*;
 
 public class StringHelperTest {
 
     private StringHelper stringHelper = new StringHelper();
 
+
+    // testing truncateAInFirst2Positions
     @Test
     public void testTruncateAInFirst2Positions_AInFirst2Positions() {
         assertEquals("CD", stringHelper.truncateAInFirst2Positions("AACD"));
@@ -30,11 +31,24 @@ public class StringHelperTest {
     }
 
 
-
-
-
+    // testing areFirstAndLastTwoCharactersTheSame
     @Test
     public void testAreFirstAndLastTwoCharactersTheSame_BasicNegativeScenario() {
-        assertFalse("hi", stringHelper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+        assertFalse(stringHelper.areFirstAndLastTwoCharactersTheSame("ABCD"));
+    }
+
+    @Test
+    public void testAreFirstAndLastTwoCharactersTheSame_BasicPositiveScenario() {
+        assertTrue(stringHelper.areFirstAndLastTwoCharactersTheSame("ABAB"));
+    }
+
+    @Test
+    public void testAreFirstAndLastTwoCharactersTheSame_TwoCharScenario() {
+        assertTrue(stringHelper.areFirstAndLastTwoCharactersTheSame("AB"));
+    }
+
+    @Test
+    public void testAreFirstAndLastTwoCharactersTheSame_OneCharScenario() {
+        assertFalse(stringHelper.areFirstAndLastTwoCharactersTheSame("A"));
     }
 }
