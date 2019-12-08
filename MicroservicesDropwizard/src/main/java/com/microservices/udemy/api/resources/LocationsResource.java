@@ -20,6 +20,6 @@ public class LocationsResource {
     // get all locations from DB
     @GET
     public Response getLocations() {
-        return Response.ok().entity("id:").build();
+        return Response.ok().entity("09:").build();
     }
 }

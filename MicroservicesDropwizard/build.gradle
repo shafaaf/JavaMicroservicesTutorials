@@ -15,4 +15,6 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     // https://mvnrepository.com/artifact/io.dropwizard/dropwizard-core
     compile group: 'io.dropwizard', name: 'dropwizard-core', version: '1.2.2'
+    compile group: 'io.dropwizard', name: 'dropwizard-db', version: '1.2.2'
+    compile group: 'io.dropwizard', name: 'dropwizard-jdbi', version: '1.2.2'
 }
