@@ -12,17 +12,20 @@ public class GuiceDemo {
     private static final String SQUARE_REQ = "SQUARE";
 
     private static void sendRequestNoGuice(String squareReq) {
-        DrawShape d = new DrawSquare();
+        DrawShape d = new DrawSquare("Red", 40);
         SquareRequest request = new SquareRequest(d);
         request.makeRequest();
     }
 
     private static void sendRequestGuice(String squareReq) {
         Injector injector = Guice.createInjector(new AppModule());
-        //DrawShape d = injector.getInstance(DrawShape.class);
-        //SquareRequest request = new SquareRequest(d);
-        SquareRequest request = injector.getInstance(SquareRequest.class);
-        request.makeRequest();
+        SquareRequest request1 = injector.getInstance(SquareRequest.class);
+        request1.makeRequest();
+
+        SquareRequest request2 = injector.getInstance(SquareRequest.class);
+        request2.makeRequest();
+
+        System.out.println("Were Square requests equal: " + (request1 == request2));
     }
 
     public static void main(String[] args) {
