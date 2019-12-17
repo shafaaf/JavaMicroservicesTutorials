@@ -1,14 +1,14 @@
 package com.drawingapp.requests;
 
-import com.drawingapp.annotations.Square;
+import com.drawingapp.annotations.Circle;
 import com.drawingapp.services.DrawShape;
 import com.google.inject.Inject;
 
-public class SquareRequest {
+public class CircleRequest {
     DrawShape d;
 
     @Inject
-    public SquareRequest(@Square DrawShape d) {
+    public CircleRequest(@Circle DrawShape d) {
         this.d = d;
     }
 
