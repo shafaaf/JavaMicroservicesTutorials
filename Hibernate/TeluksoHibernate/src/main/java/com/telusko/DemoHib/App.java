@@ -1,5 +1,8 @@
+package com.telusko.DemoHib;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
 public class App {
@@ -12,10 +15,20 @@ public class App {
         alien.setAname("Shafaaf");
         alien.setColor("Green");
 
-        Configuration conn = new Configuration();
+        System.out.println("Working Directory = " + System.getProperty("user.dir"));
+
+        //String hibernatePropsFilePath = "hibernate.cfg.xml";
+        Configuration conn = new Configuration()
+                .configure()
+                .addAnnotatedClass(Alien.class);
+
+
         SessionFactory factory = conn.buildSessionFactory();
 
         Session session = factory.openSession();
+
+        Transaction tx = session.beginTransaction();
         session.save(alien);
+        tx.commit();
     }
 }
