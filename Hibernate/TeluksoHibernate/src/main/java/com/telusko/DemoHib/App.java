@@ -4,6 +4,8 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.service.ServiceRegistry;
+import org.hibernate.service.ServiceRegistryBuilder;
 
 public class App {
 
@@ -17,15 +19,16 @@ public class App {
 
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
 
-        //String hibernatePropsFilePath = "hibernate.cfg.xml";
-        Configuration conn = new Configuration()
-                .configure()
-                .addAnnotatedClass(Alien.class);
+        Configuration conf = new Configuration();
 
+        conf.configure().addAnnotatedClass(Alien.class);
 
-        SessionFactory factory = conn.buildSessionFactory();
+        ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
+                .applySettings(conf.getProperties())
+                .buildServiceRegistry();
 
-        Session session = factory.openSession();
+        SessionFactory sf = conf.buildSessionFactory(serviceRegistry);
+        Session session = sf.openSession();
 
         Transaction tx = session.beginTransaction();
         session.save(alien);
