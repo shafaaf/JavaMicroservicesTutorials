@@ -9,8 +9,8 @@ public class DrawSquare implements DrawShape {
     private String color;
     private int edge;
 
-    @Inject
-    public DrawSquare(@ColorValue String color, @EdgeValue int edge) {
+    //@Inject
+    public DrawSquare(String color, int edge) {
         super();
         this.color = color;
         this.edge = edge;

@@ -24,11 +24,12 @@ public class GuiceDemo {
             Injector injector = Guice.createInjector(new AppModule());
             SquareRequest request = injector.getInstance(SquareRequest.class);
             request.makeRequest();
-        } else if (shapeReq.equals(CIRCLE_REQ)) {
-            Injector injector = Guice.createInjector(new AppModule());
-            CircleRequest request = injector.getInstance(CircleRequest.class);
-            request.makeRequest();
         }
+//        else if (shapeReq.equals(CIRCLE_REQ)) {
+//            Injector injector = Guice.createInjector(new AppModule());
+//            CircleRequest request = injector.getInstance(CircleRequest.class);
+//            request.makeRequest();
+//        }
     }
 
     public static void main(String[] args) {

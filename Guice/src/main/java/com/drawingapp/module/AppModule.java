@@ -8,16 +8,22 @@ import com.drawingapp.services.DrawCircle;
 import com.drawingapp.services.DrawShape;
 import com.drawingapp.services.DrawSquare;
 import com.google.inject.AbstractModule;
+import com.google.inject.Provides;
 
 public class AppModule extends AbstractModule {
 
     // What interface mapped to what impl
     @Override
     protected void configure() {
-        bind(DrawShape.class).annotatedWith(Square.class).to(DrawSquare.class);
-        bind(DrawShape.class).annotatedWith(Circle.class).to(DrawCircle.class);
+        //bind(DrawShape.class).annotatedWith(Square.class).to(DrawSquare.class);
+        //bind(DrawShape.class).annotatedWith(Circle.class).to(DrawCircle.class);
 
-        bind(String.class).annotatedWith(ColorValue.class).toInstance("Red");
-        bind(Integer.class).annotatedWith(EdgeValue.class).toInstance(40);
+        //bind(String.class).annotatedWith(ColorValue.class).toInstance("Red");
+        //bind(Integer.class).annotatedWith(EdgeValue.class).toInstance(40);
+    }
+
+    @Provides
+    DrawShape providesDrawSquare() {
+        return new DrawSquare("Blue", 120);
     }
 }
