@@ -1,9 +1,5 @@
 package com.drawingapp.services;
 
-import com.drawingapp.annotations.ColorValue;
-import com.drawingapp.annotations.EdgeValue;
-import com.google.inject.Inject;
-
 public class DrawSquare implements DrawShape {
 
     private String color;
