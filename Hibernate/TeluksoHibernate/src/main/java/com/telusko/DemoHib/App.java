@@ -9,20 +9,23 @@ import org.hibernate.service.ServiceRegistryBuilder;
 
 public class App {
 
-    public static void main(String[] args) {
-        System.out.println("Hi");
+    private static void BasicExample1() {
 
-        Alien alien = new Alien();
-        alien.setAid(101);
-        alien.setAname("Shafaaf");
-        alien.setColor("Green");
+        System.out.println("==BasicExample1==");
 
-        System.out.println("Working Directory = " + System.getProperty("user.dir"));
+        AlienName aname = new AlienName (
+                "Shafaaf",
+                "Khaled",
+                "Hossain"
+        );
+
+        Alien toSaveAlien = new Alien();
+        toSaveAlien.setAid(101);
+        toSaveAlien.setAname(aname);
+        toSaveAlien.setColor("Green");
 
         Configuration conf = new Configuration();
-
         conf.configure().addAnnotatedClass(Alien.class);
-
         ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
                 .applySettings(conf.getProperties())
                 .buildServiceRegistry();
@@ -31,7 +34,54 @@ public class App {
         Session session = sf.openSession();
 
         Transaction tx = session.beginTransaction();
-        session.save(alien);
+        session.save(toSaveAlien);
+        System.out.println("Saving to db: " + toSaveAlien);
         tx.commit();
+
+
+        Alien toFetchAlien = (Alien) session.get(Alien.class, 101);
+        System.out.println("Fetched from db: " + toFetchAlien);
+
+        System.out.println(toSaveAlien == toFetchAlien?"yes":"no");
+    }
+
+    private static void BasicExample2() {
+        System.out.println("==BasicExample2==");
+
+        Laptop laptop = new Laptop();
+        laptop.setLid(101);
+        laptop.setLname("Dell");
+
+        Student student = new Student();
+        student.setName("Khaled");
+        student.setRollNo(1);
+        student.setMarks(50);
+        student.getLaptops().add(laptop);
+
+        laptop.getStudents().add(student);
+
+        Configuration conf = new Configuration()
+                .configure()
+                .addAnnotatedClass(Student.class)
+                .addAnnotatedClass(Laptop.class);
+
+        ServiceRegistry serviceRegistry = new ServiceRegistryBuilder()
+                .applySettings(conf.getProperties())
+                .buildServiceRegistry();
+
+        SessionFactory sf = conf.buildSessionFactory(serviceRegistry);
+        Session session = sf.openSession();
+
+        session.beginTransaction();
+        session.save(laptop);
+        session.save(student);
+        session.getTransaction().commit();
+    }
+
+
+
+    public static void main(String[] args) {
+        //BasicExample1();
+        BasicExample2();
     }
 }

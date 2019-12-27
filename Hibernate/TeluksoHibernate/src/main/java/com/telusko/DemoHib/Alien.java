@@ -3,14 +3,14 @@ package com.telusko.DemoHib;
 import javax.persistence.*;
 
 @Entity
-@Table(name="alien_table2")
+@Table(name="AlienTable")
 public class Alien {
 
     @Id
     private int aid;
 
-    @Transient
-    private String aname;
+    //@Transient
+    private AlienName aname;
 
     @Column(name="alien_color")
     private String color;
@@ -21,10 +21,10 @@ public class Alien {
     public void setAid(int aid) {
         this.aid = aid;
     }
-    public String getAname() {
+    public AlienName getAname() {
         return aname;
     }
-    public void setAname(String aname) {
+    public void setAname(AlienName aname) {
         this.aname = aname;
     }
     public String getColor() {
@@ -32,5 +32,14 @@ public class Alien {
     }
     public void setColor(String color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Alien{" +
+                "aid=" + aid +
+                ", aname='" + aname + '\'' +
+                ", color='" + color + '\'' +
+                '}';
     }
 }
