@@ -1,5 +1,8 @@
-package com.example.springDemo;
+package com.example.xmlConfiguration;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Bike implements Vehicle {
 
     public void drive() {

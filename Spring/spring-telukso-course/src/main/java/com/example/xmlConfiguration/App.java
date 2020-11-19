@@ -1,4 +1,4 @@
-package com.example.springDemo;
+package com.example.xmlConfiguration;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -10,9 +10,12 @@ public class App {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 
-        Vehicle vehicle = (Vehicle) context.getBean("vehicle");
-
-        // Vehicle vehicle = new Car();
+        Vehicle vehicle = (Vehicle) context.getBean("car");
         vehicle.drive();
+
+//        Tyre tyre = (Tyre) context.getBean("tyre");
+//        System.out.println(tyre.toString());
+
     }
 }
+
