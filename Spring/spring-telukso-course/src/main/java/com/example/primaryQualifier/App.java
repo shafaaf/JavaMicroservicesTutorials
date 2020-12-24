@@ -13,6 +13,7 @@ public class App {
 
         Samsung samsung = applicationContext.getBean(Samsung.class);
         samsung.config();
+        System.out.println("End");
 
     }
 }
