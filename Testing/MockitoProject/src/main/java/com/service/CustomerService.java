@@ -6,6 +6,7 @@ import com.dao.CustomerDao;
 import com.entity.Customer;
 
 public class CustomerService {
+
 	private CustomerDao dao;
 	
 	public void register(Customer customer){
