@@ -9,12 +9,11 @@ public class App {
     public static void main(String[] args) {
         System.out.println("Hi2");
 
-        ApplicationContext applicationContext =
+        ApplicationContext factory =
                 new AnnotationConfigApplicationContext(AppConfig.class);
 
-        Samsung samsung = applicationContext.getBean(Samsung.class);
+        Samsung samsung = factory.getBean(Samsung.class);
         samsung.config();
-
     }
 }
 
