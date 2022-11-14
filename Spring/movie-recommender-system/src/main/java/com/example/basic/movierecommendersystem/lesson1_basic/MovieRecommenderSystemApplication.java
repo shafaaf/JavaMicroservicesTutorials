@@ -1,4 +1,4 @@
-package com.example.basic.movierecommendersystem.lesson2;
+package com.example.basic.movierecommendersystem.lesson1_basic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,8 +12,7 @@ public class MovieRecommenderSystemApplication {
 		SpringApplication.run(MovieRecommenderSystemApplication.class, args);
 		System.out.println("Running...");
 
-//		RecommenderImplementation recommender = new RecommenderImplementation(new ContentBasedFilter());
-		RecommenderImplementation recommender = new RecommenderImplementation(new CollaborativeFilter());
+		RecommenderImplementation recommender = new RecommenderImplementation();
 		String[] result = recommender.recommendMovies("Finding Dory");
 		System.out.println(Arrays.toString(result));
 	}

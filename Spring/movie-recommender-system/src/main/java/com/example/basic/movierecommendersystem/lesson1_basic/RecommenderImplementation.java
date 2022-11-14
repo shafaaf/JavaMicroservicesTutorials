@@ -1,4 +1,4 @@
-package com.example.basic.movierecommendersystem.lesson1;
+package com.example.basic.movierecommendersystem.lesson1_basic;
 
 public class RecommenderImplementation {
 
