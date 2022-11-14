@@ -1,9 +1,7 @@
-package com.example.basic.movierecommendersystem.lesson4_Primary;
+package com.example.basic.movierecommendersystem.lesson7_constructorAndSetterInjection;
 
-import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Primary
 @Component
 public class CollaborativeFilter implements Filter {
     public String[] getRecommendations(String movie) {

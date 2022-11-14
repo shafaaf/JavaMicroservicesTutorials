@@ -1,4 +1,4 @@
-package com.example.basic.movierecommendersystem.lesson4_Primary;
+package com.example.basic.movierecommendersystem.lesson4_primary;
 
 import org.springframework.stereotype.Component;
 
