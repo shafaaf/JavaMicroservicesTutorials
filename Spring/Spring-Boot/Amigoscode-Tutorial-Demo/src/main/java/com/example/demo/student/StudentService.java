@@ -1,15 +1,30 @@
 package com.example.demo.student;
 
- import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class StudentService {
+    private final StudentRepository studentRepository;
 
-    public List<Student> getStudents () {
-        return List.of(new Student(1L, "bob", "bob@mail.com", LocalDate.of(1994, Month.JANUARY, 5), 21));
+    @Autowired
+    public StudentService(StudentRepository studentRepository) {
+        this.studentRepository = studentRepository;
+    }
+
+    public List<Student> getStudents() {
+        return studentRepository.findAll();
+    }
+
+    public void addNewStudent(Student student) {
+        System.out.println("addNewStudent: student is: " + student);
+        Optional<Student> optionalStudent = studentRepository.findStudentByEmail(student.email);
+        if (optionalStudent.isPresent()) {
+            throw new IllegalStateException("Email taken");
+        }
+        studentRepository.save(student);
     }
 }
