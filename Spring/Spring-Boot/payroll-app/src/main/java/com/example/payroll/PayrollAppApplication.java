@@ -10,5 +10,4 @@ public class PayrollAppApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PayrollAppApplication.class, args);
 	}
-
 }

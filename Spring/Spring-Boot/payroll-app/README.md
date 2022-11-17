@@ -1,7 +1,8 @@
 Tutorial from: https://spring.io/guides/tutorials/rest/
 
-Route:
+Did till HATEOAS section
 
+Route:
 http://localhost:8080/employees
 http://localhost:8080/employees/99
 

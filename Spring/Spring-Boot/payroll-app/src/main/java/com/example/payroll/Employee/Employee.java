@@ -8,6 +8,8 @@ import java.util.Objects;
 // @Entity is a JPA annotation to make this object ready for storage in a JPA-based data store.
 @Entity
 class Employee {
+    // id is marked with more JPA annotations to indicate it’s the primary key and
+    // automatically populated by the JPA provider.
     @Id @GeneratedValue private Long id;
     private String name;
     private String role;
@@ -45,7 +47,6 @@ class Employee {
 
     @Override
     public boolean equals(Object o) {
-
         if (this == o)
             return true;
         if (!(o instanceof Employee))
