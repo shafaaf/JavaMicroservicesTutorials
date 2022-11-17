@@ -26,4 +26,20 @@ public class StudentController {
         System.out.println("Received request at: registerNewStudent");
         studentService.addNewStudent(student);
     }
+
+    @DeleteMapping(path = "{studentId}")
+    public void deleteStudent(@PathVariable("studentId") Long studentId) {
+        System.out.println("Received delete request at: deleteStudent");
+        studentService.deleteStudent(studentId);
+    }
+
+    @PutMapping(path = "{studentId}")
+    public void updateStudent(
+            @PathVariable("studentId") Long studentId,
+            @RequestParam(required = false) String name,
+            @RequestParam(required = false) String email
+        ) {
+        System.out.println("Received update request at: updateStudent");
+        studentService.updateStudent(studentId, name, email);
+    }
 }
