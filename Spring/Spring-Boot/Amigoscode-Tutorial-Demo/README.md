@@ -11,7 +11,8 @@ https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.6.1
 Target folder
 @Transactional annotation
 DB properties in application.properties
-
+Repo pattern
+DAO layer
 
 See Table Of Contents, imp diagram on tutorial link
 api layer -> service layer -> data access layer -> db 
