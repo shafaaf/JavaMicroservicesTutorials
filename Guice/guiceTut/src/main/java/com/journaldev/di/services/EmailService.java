@@ -2,8 +2,6 @@ package com.journaldev.di.services;
 
 import javax.inject.Singleton;
 
-//import com.google.inject.Singleton;
-
 @Singleton
 public class EmailService implements MessageService {
 
