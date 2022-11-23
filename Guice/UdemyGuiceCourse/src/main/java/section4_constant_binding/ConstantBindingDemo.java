@@ -5,7 +5,7 @@ import com.google.inject.Injector;
 import section4_constant_binding.module.AppModule;
 import section4_constant_binding.requests.SquareRequest;
 
-public class GuiceDemo {
+public class ConstantBindingDemo {
     private static final String SQUARE_REQ = "SQUARE";
 
     private static void sendRequest(String squareReq) {

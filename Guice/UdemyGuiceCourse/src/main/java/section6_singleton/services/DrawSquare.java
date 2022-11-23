@@ -1,8 +1,8 @@
-package section4_constant_binding.services;
+package section6_singleton.services;
 
 import com.google.inject.Inject;
-import section4_constant_binding.annotations.ColorValue;
-import section4_constant_binding.annotations.EdgeValue;
+import section6_singleton.annotations.ColorValue;
+import section6_singleton.annotations.EdgeValue;
 
 public class DrawSquare implements DrawShape {
     private String color;
