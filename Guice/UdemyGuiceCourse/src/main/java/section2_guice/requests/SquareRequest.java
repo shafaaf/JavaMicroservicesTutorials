@@ -1,7 +1,7 @@
-package guice.Requests;
+package section2_guice.requests;
 
 import com.google.inject.Inject;
-import guice.Services.DrawShape;
+import section2_guice.services.DrawShape;
 
 public class SquareRequest {
     // can also remove SquareRequest constructor and inject on the member variable below

@@ -1,9 +1,9 @@
-package guice;
+package section2_guice;
 
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-import guice.Module.AppModule;
-import guice.Requests.SquareRequest;
+import section2_guice.module.AppModule;
+import section2_guice.requests.SquareRequest;
 
 public class GuiceDemo {
     private static final String SQUARE_REQ = "SQUARE";
@@ -17,6 +17,7 @@ public class GuiceDemo {
     }
 
     public static void main(String[] args) {
+        System.out.println("Guice demo");
         sendRequest(SQUARE_REQ);
     }
 }

@@ -1,4 +1,4 @@
-package noGuice.Services;
+package section2_no_guice.services;
 
 public class DrawSquare implements DrawShape {
     @Override

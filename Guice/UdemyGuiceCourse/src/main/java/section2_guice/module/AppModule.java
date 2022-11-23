@@ -1,8 +1,8 @@
-package guice.Module;
+package section2_guice.module;
 
 import com.google.inject.AbstractModule;
-import guice.Services.DrawShape;
-import guice.Services.DrawSquare;
+import section2_guice.services.DrawShape;
+import section2_guice.services.DrawSquare;
 
 public class AppModule extends AbstractModule {
     @Override

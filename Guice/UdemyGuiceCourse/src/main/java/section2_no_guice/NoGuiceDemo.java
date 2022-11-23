@@ -1,8 +1,8 @@
-package noGuice;
+package section2_no_guice;
 
-import noGuice.Requests.SquareRequest;
-import noGuice.Services.DrawShape;
-import noGuice.Services.DrawSquare;
+import section2_no_guice.requests.SquareRequest;
+import section2_no_guice.services.DrawShape;
+import section2_no_guice.services.DrawSquare;
 
 public class NoGuiceDemo { 
 
@@ -17,7 +17,7 @@ public class NoGuiceDemo {
     }
 
     public static void main(String[] args) {
+        System.out.println("No Guice Demo");
         sendRequest(SQUARE_REQ);
     }
-
 }

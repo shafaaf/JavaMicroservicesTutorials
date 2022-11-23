@@ -1,6 +1,6 @@
-package noGuice.Requests;
+package section2_no_guice.requests;
 
-import noGuice.Services.DrawShape;
+import section2_no_guice.services.DrawShape;
 
 public class SquareRequest {
     DrawShape d;
