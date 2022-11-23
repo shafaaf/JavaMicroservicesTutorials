@@ -1,6 +1,5 @@
 package com.journaldev.di.test;
 
-
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -36,7 +35,7 @@ public class MyApplicationTest {
 	@Test
 	public void test() {
 		MyApplication appTest = injector.getInstance(MyApplication.class);
-		Assert.assertEquals(true, appTest.sendMessage("Hi Pankaj", "pankaj@abc.com"));;
+		Assert.assertEquals(true, appTest.sendMessage("Hi Pankaj", "pankaj@abc.com"));
 	}
 
 }
