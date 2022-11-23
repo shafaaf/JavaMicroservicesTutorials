@@ -2,7 +2,7 @@
 
 https://www.udemy.com/course/dependency-injection-by-google-section2_guice/
 
-Done till: Section 3
+Done till: Section 8
 
 Section 5, 7 - good summaries
 
