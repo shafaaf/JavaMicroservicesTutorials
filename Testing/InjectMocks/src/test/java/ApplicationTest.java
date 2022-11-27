@@ -5,6 +5,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -18,9 +19,6 @@ public class ApplicationTest {
     @Mock
     NetworkDAO dependentClassTwo;
 
-    @Mock
-    Testing testing;
-
     @Before
     public void init() {
         MockitoAnnotations.initMocks(this);
@@ -30,14 +28,14 @@ public class ApplicationTest {
     public void validateTest1()
     {
         boolean saved = mainClass.save("temp.txt");
-        assertEquals(true, saved);
+        assertTrue(saved);
     }
 
     @Test
     public void validateTest2()
     {
         boolean saved = mainClass.save("temp.txt");
-        assertEquals(true, saved);
+        assertTrue(saved);
 
         verify(dependentClassOne, times(1)).save("temp.txt");
         verify(dependentClassTwo, times(1)).save("temp.txt");
