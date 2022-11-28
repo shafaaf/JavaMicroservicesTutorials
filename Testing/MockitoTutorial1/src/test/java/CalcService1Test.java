@@ -3,6 +3,7 @@ import org.example.CalcService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.mockito.internal.verification.VerificationModeFactory;
 
@@ -67,8 +68,10 @@ public class CalcService1Test {
     // TODO: Not working, fix this
     @Test
     public void testMethod() {
-        List<String> list = new ArrayList<>();
-        List<String> listSpy = spy(list);
+        List<String> listSpy = Mockito.spy(new ArrayList<>());
+
+//        List<String> list = new ArrayList<>();
+//        List<String> listSpy = spy(list);
 
         listSpy.add("first-element");
         System.out.println(listSpy.get(0));

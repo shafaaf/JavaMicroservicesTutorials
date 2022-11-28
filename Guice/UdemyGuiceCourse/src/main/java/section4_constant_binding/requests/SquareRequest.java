@@ -4,7 +4,6 @@ import com.google.inject.Inject;
 import section4_constant_binding.services.DrawShape;
 
 public class SquareRequest {
-    // can also remove SquareRequest constructor and inject on the member variable below
     DrawShape d;
 
     @Inject

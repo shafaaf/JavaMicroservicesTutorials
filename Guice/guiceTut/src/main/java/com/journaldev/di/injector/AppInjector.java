@@ -12,7 +12,7 @@ public class AppInjector extends AbstractModule {
 		// can change binding to any 1 below
 
 		// bind the service to implementation class
-		bind(MessageService.class).to(EmailService.class);
-		//bind(MessageService.class).to(FacebookService.class);
+//		bind(MessageService.class).to(EmailService.class);
+		bind(MessageService.class).to(FacebookService.class);
 	}
 }
